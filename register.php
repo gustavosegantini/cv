@@ -8,7 +8,6 @@
 
 <body>
     <form action="register_submit.php" method="post">
-        <input type="hidden" name="usuario_id" value="<?php echo $_SESSION['usuario_id']; ?>">
         <input type="text" name="nome" placeholder="Nome" required>
         <input type="text" name="sobrenome" placeholder="Sobrenome" required>
         <input type="email" name="email" placeholder="Email" required>

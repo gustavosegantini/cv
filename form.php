@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="form_styles.css">
     <title>Formulário de Currículo</title>
 </head>
+
 <body>
     <form action="submit.php" method="post">
+        <input type="hidden" name="usuario_id" value="<?php echo $_SESSION['usuario_id']; ?>">
         <input type="text" name="nome" placeholder="Nome" required>
         <input type="text" name="cargo" placeholder="Cargo" required>
         <textarea name="resumo" placeholder="Resumo" required></textarea>
@@ -26,7 +29,7 @@
     </form>
 
     <script>
-        document.getElementById('add').addEventListener('click', function() {
+        document.getElementById('add').addEventListener('click', function () {
             var experiencias = document.getElementById('experiencias');
             var novaExperiencia = document.createElement('div');
             novaExperiencia.className = 'experiencia';
@@ -42,4 +45,5 @@
         });
     </script>
 </body>
+
 </html>
