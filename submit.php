@@ -6,8 +6,9 @@ $cargo = $_POST['cargo'];
 $resumo = $_POST['resumo'];
 
 // Preparar a declaração SQL
-$stmt = $conn->prepare("INSERT INTO Curriculos (nome, cargo, resumo, empresa, data_inicio, data_fim, titulo_cargo, descricao_cargo, emprego_atual) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssssssi", $nome, $cargo, $resumo, $empresa, $data_inicio, $data_fim, $titulo_cargo, $descricao_cargo, $emprego_atual);
+$stmt = $conn->prepare("INSERT INTO Curriculos (nome, cargo, resumo, empresa, data_inicio, data_fim, titulo_cargo, descricao_cargo, emprego_atual, usuario_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssssssii", $nome, $cargo, $resumo, $empresa, $data_inicio, $data_fim, $titulo_cargo, $descricao_cargo, $emprego_atual, $usuario_id);
+
 
 // Iterar por cada empresa preenchida
 for ($i = 0; $i < count($_POST['empresa']); $i++) {
